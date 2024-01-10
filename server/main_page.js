@@ -2,7 +2,7 @@ const express = require('express');
 const { OpenAI } = require("openai");
 const app = express();
 const port = 3000;
-const openai = new OpenAI({ apiKey: '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'}); // Replace 'your-api-key' with your actual API key
+const openai = new OpenAI({ apiKey: 'xxx'}); // Replace 'your-api-key' with your actual API key
 
 
 app.use(express.static('public'));
