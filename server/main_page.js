@@ -32,8 +32,7 @@ app.get('/generate-greeting', async (req, res) => {
         model: 'gpt-3.5-turbo',
         temperature: 0.8
       });
-  
-      console.log(chatCompletion.choices[0].message.content);
+
       return res.send(chatCompletion.choices[0].message.content);
     } catch (error) {
       console.error(error);
