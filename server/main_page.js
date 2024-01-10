@@ -1,7 +1,7 @@
 const express = require('express');
 const { OpenAI } = require("openai");
 const app = express();
-const port = 3000;
+
 const openai = new OpenAI({ apiKey: 'xxx'}); // Replace 'your-api-key' with your actual API key
 
 
@@ -39,6 +39,8 @@ app.get('/generate-greeting', async (req, res) => {
       return res.status(500).send("Internal Server Error");
     }
   });
+
+const port = 3000;
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
