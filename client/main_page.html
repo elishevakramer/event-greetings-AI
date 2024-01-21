@@ -1,0 +1,126 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #cb92b3; /* light blue */
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #560d4c; /* darker blue */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #464545;
+    }
+
+    select, input {
+      padding: 10px;
+      font-size: 16px;
+      width: 100px;
+      margin: 5px;
+      border: 1px solid #a4c5e7; /* light blue border */
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #f0d5e1; 
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #cc66c5; /* light green border on focus */
+    }
+
+    select option:checked {
+      background-color: #cc6699; /* light green background for selected option */
+      color: #dff0d5; /* white text for selected option */
+    }
+
+    #ageInput {
+      display: none;
+    }
+
+    #choiceContainer {
+      height: '200px';
+    }
+
+    #buttonContainer {
+      margin-top: 20px;
+    }
+
+    #rel {
+      background-color: #e6f7ff;
+      border: none;
+    }
+
+    #responseContainer {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    #submitButton {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #560d4c;  /* light green */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width:220px;
+    }
+  </style>
+</head>
+<body id = "body">
+  <h1>!!!בחרו את המכתב שלכם</h1>
+<div id = "choiceContainer">
+  <button id = "rel" onclick="rel()" style="display: none;"></button>
+  <label for="category">סוג:</label>
+  <select id="category" >
+    <option value="ברכה">ברכה</option>
+    <option value="שיר">שיר</option>
+    <option value="דיקלום">דיקלום</option>
+  </select>
+
+  <label  for="atmosphere">אווירה:</label>
+  <select id="atmosphere">
+    <option value="שמחה">שמחה</option>
+    <option value="מצחיקה">מצחיקה</option>
+    <option value="התרגשות">התרגשות</option>
+  </select>
+
+  <label for="event">אירוע:</label>
+  <select id="event" onchange="handleEventChange()">
+    <option value="חתונה">חתונה</option>
+    <option value="יום הולדת">יום הולדת</option>
+  </select>
+
+  <div id="ageInput" style="display: none;">
+    <label  for="age">גיל</label>
+    <input type="number" id="age" />
+  </div>
+</div>
+
+ 
+  <div id="buttonContainer">
+    <button id="submitButton" onclick="submitChoices()">דוגמאות לברכות</button>
+  </div>
+
+  <div id="responseContainer" style="display: none;"></div>
+
+
+  <script src="main_page.js"></script>
+</body>
+</html>
